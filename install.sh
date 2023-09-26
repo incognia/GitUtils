@@ -26,3 +26,4 @@ fi
 # Copiar archivos
 cp autogit.sh ~/bin/autogit
 cp fastgit.sh ~/bin/fastgit
+echo "Utilerías para GitHub instaladas"
