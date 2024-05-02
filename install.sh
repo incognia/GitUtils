@@ -27,3 +27,21 @@ fi
 cp autogit.sh ~/bin/autogit
 cp fastgit.sh ~/bin/fastgit
 echo "Utilerías para GitHub instaladas"
+
+# Define los archivos a buscar
+files=(~/.bashrc ~/.zshrc ~/.kshrc ~/.tcshrc)
+
+# Define el comentario y la línea a agregar
+comment="# Añadir ~/bin al PATH"
+line_to_add="export PATH=\"\$HOME/bin:\$PATH\""
+
+# Recorre cada archivo
+for file in "${files[@]}"; do
+    # Verifica si el archivo existe
+    if [[ -f $file ]]; then
+        # Agrega el comentario y la línea al final del archivo
+        echo "$comment" >> $file
+        echo "$line_to_add" >> $file
+        echo "El archivo $file fue modificado."
+    fi
+done
